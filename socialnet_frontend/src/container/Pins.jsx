@@ -12,6 +12,7 @@ const Pins = ({ user }) => {
                 <Navbar
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
+                    user={user}
                 />
             </div>
             <div className='h-full'>
