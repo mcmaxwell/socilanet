@@ -26,7 +26,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 
     const savePin = (id) => {
         if (!alreadySaved) {
-            console.log(user);
             client
                 .patch(id)
                 .setIfMissing({ save: [] })
@@ -110,7 +109,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                                         : destination}
                                 </a>
                             )}
-                            {postedBy?._id === user.googleId && (
+                            {postedBy?._id === user?.googleId && (
                                 <button
                                     type='button'
                                     onClick={(e) => {

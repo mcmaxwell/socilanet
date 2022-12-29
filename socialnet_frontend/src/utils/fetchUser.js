@@ -4,7 +4,9 @@ export const fetchUser = () => {
             ? JSON.parse(localStorage.getItem('user'))
             : localStorage.clear();
 
-    userInfo['googleId'] = userInfo.jti;
+    if (userInfo?.jti) {
+        userInfo['googleId'] = userInfo?.jti;
+    }
 
     return userInfo;
 };
